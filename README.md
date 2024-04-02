@@ -21,7 +21,9 @@ an overwhelming number of emails under control, without deleting some emails tha
 
 ## Features Coming Soon
 All original emails will be saved into a Txt file in the same folder.
+
 Once you are done erasing email addresses you wish to keep you can call the erase function.
+
 All of the emails will then be removed from your account.
 <hr/>
 

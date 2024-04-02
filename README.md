@@ -1,6 +1,6 @@
 # Email Manager
 
-#### This program uses Google's Gmail API to print out each unique email address that you have received.
+#### This program uses Google's Gmail API to print out each unique email address from your inbox.
 <hr/>
 
 ## Why would I want to know about unique email addresses in my inbox?

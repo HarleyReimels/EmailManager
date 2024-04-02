@@ -112,14 +112,20 @@ def search_messages(service, query):
         if 'messages' in result:
             messages.extend(result['messages'])
     return messages
+# Search for specific messages by change From to whatever keyword you choose
+all_messages = search_messages(service, "From")
 
-x = search_messages(service, "From")
+# Variable stores decoded messages using the read_message function
 real_original = []
-for item in x:
+for item in all_messages:
     real_original.append(read_message(service, item))
-my_last_try = []
+
+# Adds only unique emails, this helps to identify any senders your want to mass delete / block / ignore    
+company_and_email = []
 for item in real_original:
-    if item not in my_last_try:
-        my_last_try.append(item)
-for item in my_last_try:
+    if item not in company_and_email:
+        company_and_email.append(item)
+        
+# Prints all unique emails        
+for item in company_and_email:
     print(item[0])

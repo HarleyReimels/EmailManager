@@ -120,6 +120,17 @@ real_original = []
 for item in all_messages:
     real_original.append(read_message(service, item))
 
+
+
+id_and_email_list = []
+
+# Creates a dictionary at each list index to track each emails ID and the email who sent it
+# We need the ID to delete emails at a later stage
+for x in range(len(all_messages)):
+    id_and_email_list.append({'id': all_messages[x]["id"], 'email': real_original[x][0]})
+
+
+
 # Adds only unique emails, this helps to identify any senders your want to mass delete / block / ignore    
 company_and_email = []
 for item in real_original:
@@ -128,4 +139,4 @@ for item in real_original:
         
 # Prints all unique emails        
 for item in company_and_email:
-    print(item[0])
+    print(item)

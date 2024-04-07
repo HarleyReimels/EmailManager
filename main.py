@@ -17,7 +17,8 @@ from mimetypes import guess_type as guess_mime_type
 # Request all access (permission to read/send/receive emails, manage the inbox, and more)
 SCOPES = ['https://mail.google.com/']
 our_email = 'Your Email Here'
-
+# Returns all emails if left blank, Add a keyword to search for specific item.
+search_term = ""
 def gmail_authenticate():
     creds = None
     # the file token.pickle stores the user's access and refresh tokens, and is
@@ -113,7 +114,7 @@ def search_messages(service, query):
             messages.extend(result['messages'])
     return messages
 # Search for specific messages by change From to whatever keyword you choose
-all_messages = search_messages(service, "From")
+all_messages = search_messages(service, search_term)
 
 # Variable stores decoded messages using the read_message function
 real_original = []
